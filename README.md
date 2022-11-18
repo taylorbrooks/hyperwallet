@@ -1,8 +1,5 @@
 # Hyperwallet Ruby Client
-=======
 A Ruby wrapper for the Hyperwallet API
-
-A Ruby wrapper for the Hyperwalle API
 
 To get a general overview of API: https://docs.hyperwallet.com/content/hyperwallet-payout-documentation
 
