@@ -9,6 +9,7 @@ module Hyperwallet
     include Hyperwallet::Client::BankAccount
     include Hyperwallet::Client::Payment
     include Hyperwallet::Client::User
+    include Hyperwallet::Client::WebhookNotification
 
     attr_reader :url, :username, :password, :logger, :connection, :adapter
 

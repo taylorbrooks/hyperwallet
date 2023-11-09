@@ -13,23 +13,28 @@ module Hyperwallet
 
       def create_bank_account(
         user_token,
-        profile_type: 'BUSINESS',
-        client_payment_id:,
-        destination_token:,
-        program_token:,
-        currency: 'USD'
+        routing_number:,
+        account_number:,
+        business_name:,
+        address:,
+        city:,
+        state:,
+        postal_code:
       )
 
         options = {
-          amount: amount,
-          clientPaymentId: client_payment_id,
-          currency: currency,
-          destinationToken: destination_token,
-          programToken: program_token,
+          profileType: 'BUSINESS',
           transferMethodCountry: 'US',
           transferMethodCurrency: 'USD',
           type: 'BANK_ACCOUNT',
+          branchId: routing_number,
+          bankAccountId: account_number,
           bankAccountPurpose: 'CHECKING',
+          businessName: business_name,
+          addressLine1: address,
+          city: city,
+          stateProvince: state,
+          postalCode: postal_code,
           country: 'US'
         }
 

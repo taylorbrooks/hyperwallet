@@ -16,7 +16,8 @@ module Hyperwallet
         client_payment_id:,
         destination_token:,
         program_token:,
-        currency: 'USD'
+        currency: 'USD',
+        purpose: 'OTHER'
       )
 
         options = {
@@ -24,7 +25,8 @@ module Hyperwallet
           clientPaymentId: client_payment_id,
           currency: currency,
           destinationToken: destination_token,
-          programToken: program_token
+          programToken: program_token,
+          purpose: purpose
         }
 
         post(payment_path, options)

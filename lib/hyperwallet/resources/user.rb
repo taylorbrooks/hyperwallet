@@ -14,30 +14,33 @@ module Hyperwallet
       def create_user(
         program_token:,
         client_user_id:,
-        profile_type:,
-        email:
+        email:,
+        profile_type: 'BUSINESS',
+        business_type: 'NOT_FOR_PROFIT_ORGANIZATION',
+        business_name:,
+        address:,
+        city:,
+        state:,
+        postal_code:,
+        country: 'US'
       )
 
         options = {
           programToken: program_token,
           clientUserId: client_user_id,
           profileType: profile_type,
-          email: email
+          email: email,
+          profileType: profile_type,
+          businessType: business_type,
+          businessName: business_name,
+          addressLine1: address,
+          city: city,
+          stateProvince: state,
+          postalCode: postal_code,
+          country: country
         }
 
         post(user_path, options)
-      end
-
-      def update_user(
-        id
-      )
-        options = {}
-
-        patch(user_path(id), options)
-      end
-
-      def delete_user(id)
-        delete(user_path(id))
       end
 
       private
