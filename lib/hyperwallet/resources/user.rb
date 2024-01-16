@@ -30,7 +30,6 @@ module Hyperwallet
           clientUserId: client_user_id,
           profileType: profile_type,
           email: email,
-          profileType: profile_type,
           businessType: business_type,
           businessName: business_name,
           addressLine1: address,
