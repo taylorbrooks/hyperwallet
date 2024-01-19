@@ -13,7 +13,7 @@ module Hyperwallet
 
     attr_reader :url, :username, :password, :logger, :connection, :adapter
 
-    def initialize(url:, username:, password:, logger: true, adapter: Faraday.default_adapter)
+    def initialize(url:, username:, password:, logger: true, adapter: Faraday.default_adapter, proxy: nil)
       @url      = "#{url}/rest/v4/"
       @username = username
       @password = password
@@ -53,6 +53,8 @@ module Hyperwallet
         url: url,
         headers: headers
       }
+
+      client_opts[:proxy] = proxy if proxy
 
       Faraday.new(client_opts) do |conn|
         conn.request   :authorization, :basic, username, password
