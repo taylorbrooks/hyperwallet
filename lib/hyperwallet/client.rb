@@ -11,7 +11,7 @@ module Hyperwallet
     include Hyperwallet::Client::User
     include Hyperwallet::Client::WebhookNotification
 
-    attr_reader :url, :username, :password, :logger, :connection, :adapter
+    attr_reader :url, :username, :password, :logger, :connection, :adapter, :proxy
 
     def initialize(url:, username:, password:, logger: true, adapter: Faraday.default_adapter, proxy: nil)
       @url      = "#{url}/rest/v4/"
@@ -19,6 +19,7 @@ module Hyperwallet
       @password = password
       @logger   = logger
       @adapter  = adapter
+      @proxy    = proxy
     end
 
     def delete(path, options = {})
