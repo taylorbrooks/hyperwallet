@@ -17,7 +17,8 @@ module Hyperwallet
         destination_token:,
         program_token:,
         currency: 'USD',
-        purpose: 'OTHER'
+        purpose: 'OTHER',
+        notes: nil
       )
 
         options = {
@@ -28,6 +29,8 @@ module Hyperwallet
           programToken: program_token,
           purpose: purpose
         }
+
+        options[:notes] = notes if notes
 
         post(payment_path, options)
       end
